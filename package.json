@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run task-tracker:storybook",
-    "build-storybook": "ng run task-tracker:build-storybook"
+    "format": "prettier --write \"src/**/*.{ts,html,scss}\"",
+    "build-storybook": "ng run task-tracker:build-storybook",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -35,13 +37,19 @@
     "@storybook/addon-onboarding": "^9.0.4",
     "@storybook/angular": "^9.0.4",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "20.0.0",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.1",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.5.3",
     "storybook": "^9.0.4",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.2",
+    "typescript-eslint": "8.33.1"
   }
 }

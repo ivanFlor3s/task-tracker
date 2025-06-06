@@ -5,7 +5,7 @@ import { ButtonComponent } from './button.component';
 import type { User } from './user';
 
 @Component({
-  selector: 'storybook-header',
+  selector: 'app-storybook-header',
   standalone: true,
   imports: [CommonModule, ButtonComponent],
   template: `<header>
@@ -32,29 +32,29 @@ import type { User } from './user';
           Welcome, <b>{{ user.name }}</b
           >!
         </span>
-        <storybook-button
+        <app-storybook-button
           *ngIf="user"
           size="small"
-          (onClick)="onLogout.emit($event)"
+          (clicked)="onLogout.emit($event)"
           label="Log out"
-        ></storybook-button>
+        ></app-storybook-button>
       </div>
       <div *ngIf="!user">
-        <storybook-button
+        <app-storybook-button
           *ngIf="!user"
           size="small"
           class="margin-left"
-          (onClick)="onLogin.emit($event)"
+          (clicked)="onLogin.emit($event)"
           label="Log in"
-        ></storybook-button>
-        <storybook-button
+        ></app-storybook-button>
+        <app-storybook-button
           *ngIf="!user"
           size="small"
           [primary]="true"
           class="margin-left"
-          (onClick)="onCreateAccount.emit($event)"
+          (clicked)="onCreateAccount.emit($event)"
           label="Sign up"
-        ></storybook-button>
+        ></app-storybook-button>
       </div>
     </div>
   </div>
