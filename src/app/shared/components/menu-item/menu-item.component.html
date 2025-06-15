@@ -1,0 +1,8 @@
+<a
+  [routerLink]="route()"
+  routerLinkActive="bg-slate-100"
+  class="flex gap-x-3 hover:bg-slate-100 rounded-md py-2 px-3 hover:cursor-pointer"
+>
+  <img [src]="'assets/icons/' + icon() + '.svg'" [alt]="'icon ' + icon()" />
+  <span class="text-sm"> {{ label() }} </span>
+</a>
