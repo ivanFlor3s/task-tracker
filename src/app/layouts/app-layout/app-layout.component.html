@@ -1,1 +1,11 @@
-<p>app-layout works!</p>
+<div class="grid grid-cols-[auto_1fr] h-screen">
+  <!-- Sidebar -->
+  <aside class="bg-white dark:bg-gray-900 dark:border-gray-700 w-64">
+    <app-side-bar [menuItems]="menu"></app-side-bar>
+  </aside>
+
+  <!-- Contenido -->
+  <main class="bg-gray-50 dark:bg-gray-800 overflow-auto">
+    <router-outlet></router-outlet>
+  </main>
+</div>
