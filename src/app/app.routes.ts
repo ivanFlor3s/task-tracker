@@ -14,6 +14,13 @@ export const routes: Routes = [
             (m) => m.DashboardPageComponent,
           ),
       },
+      {
+        path: 'tasks',
+        loadComponent: () =>
+          import('./features/tasks/pages/tasks-page/tasks-page.component').then(
+            (m) => m.TasksPageComponent,
+          ),
+      },
     ],
   },
   {
