@@ -2,6 +2,51 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "MenuItem",
+            "id": "interface-MenuItem-97337152705728a9b13b801d401a0a76c05bb8a296a8e3370bb7e43b17ebb1bce522a43c6856033ad1b2ae0995f5d2c94eb409f90563d7e5e15252217a890606",
+            "file": "src/app/features/dashboard/models/menu-item.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface MenuItem {\r\n  label: string;\r\n  icon: string;\r\n  route: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "route",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
@@ -27,7 +72,101 @@
             "extends": []
         }
     ],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "ThemeService",
+            "id": "injectable-ThemeService-1900a28b84b7bcde5996c40b4060ac2d9c7ee90a9dc1d1708e8131616d7a9e300c57a143b722a0b02fb907ca4d684a84d0159d6f77b0d8ac6305be8be29c6e10",
+            "file": "src/app/core/services/theme.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getFromLocalStorage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "\"light\" | \"dark\"",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "saveInLocalStorage",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "\"light\" | \"dark\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "'light'"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "\"light\" | \"dark\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "'light'",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleDarkMode",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleLightMode",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleTheme",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\nexport class ThemeService {\r\n  constructor() {\r\n    const theme = this.getFromLocalStorage();\r\n    if (theme === 'dark') {\r\n      this.toggleDarkMode();\r\n    }\r\n  }\r\n\r\n  saveInLocalStorage(theme: 'light' | 'dark' = 'light') {\r\n    localStorage.setItem('theme', theme);\r\n  }\r\n\r\n  getFromLocalStorage(): 'light' | 'dark' {\r\n    const theme = localStorage.getItem('theme');\r\n    return theme === 'dark' ? 'dark' : 'light';\r\n  }\r\n\r\n  toggleTheme() {\r\n    const currentTheme = this.getFromLocalStorage();\r\n    this.saveInLocalStorage();\r\n\r\n    if (currentTheme === 'dark') {\r\n      this.toggleLightMode();\r\n    } else {\r\n      this.toggleDarkMode();\r\n    }\r\n  }\r\n\r\n  toggleDarkMode() {\r\n    const html = document.documentElement;\r\n    html.classList.toggle('dark');\r\n    return 'dark';\r\n  }\r\n\r\n  toggleLightMode() {\r\n    const html = document.documentElement;\r\n    html.classList.remove('dark');\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 6
+            },
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
     "guards": [],
     "interceptors": [],
     "classes": [],
@@ -35,7 +174,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-ef2a6df84eabf94cec3d459df4f6fc5fb9deea9f289e2ae6d10c0882a0d745e6e949a0d71e4366e6434056d43d68ea6decfa6ae19c768081ff42c61df70ccb1f",
+            "id": "component-AppComponent-b254973036eab60251ad18f27d2e500fa9db129da01f223fd522884919e1c8645f9c452df8fcf3529d07db32b088bf0ada0afb93ae77330012de6bdf21c1c1b5",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -54,6 +193,20 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "themeService",
+                    "defaultValue": "inject(ThemeService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
                     "name": "title",
                     "defaultValue": "'task-tracker'",
                     "deprecated": false,
@@ -62,10 +215,21 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 12
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggleDarkMode",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -79,13 +243,147 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [RouterOutlet],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.css'\r\n})\r\nexport class AppComponent {\r\n  title = 'task-tracker';\r\n}\r\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { ThemeService } from './core/services/theme.service';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [RouterOutlet],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.css',\r\n})\r\nexport class AppComponent {\r\n  title = 'task-tracker';\r\n  private themeService = inject(ThemeService);\r\n\r\n  toggleDarkMode() {\r\n    this.themeService.toggleTheme();\r\n  }\r\n}\r\n",
             "styleUrl": "./app.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<main class=\"main font-i\">\r\n  <div class=\"container\">\r\n    <h1 class=\"text-3xl\">Welcome to My Angular App</h1>\r\n    <p>This is a simple example of an Angular application.</p>\r\n  </div>\r\n</main>\r\n\r\n\r\n<router-outlet />\r\n"
+            "templateData": "<router-outlet />\r\n"
+        },
+        {
+            "name": "AppLayoutComponent",
+            "id": "component-AppLayoutComponent-1a06f491326cda523291ecbbadc83bc10818d333008676248a1bd7274389464d48ad405fde8d0803c44039e760fd34b909785e22b6bbba346a88c7bcc3ae037d",
+            "file": "src/app/layouts/app-layout/app-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-app-layout",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app-layout.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "menu",
+                    "defaultValue": "[\r\n    { icon: 'home', label: 'Home', route: '/dashboard' },\r\n    { icon: 'tasks', label: 'Tasks', route: '/tasks' },\r\n    { icon: 'reports', label: 'Reports', route: '/calendar' },\r\n    { icon: 'settings', label: 'Settings', route: '/settings' },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MenuItem[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "SideBarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "RouterOutlet"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MenuItem } from '../../features/dashboard/models/menu-item';\r\nimport { SideBarComponent } from '../../shared/components/side-bar/side-bar.component';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-app-layout',\r\n  imports: [SideBarComponent, RouterOutlet],\r\n  templateUrl: './app-layout.component.html',\r\n  styleUrl: './app-layout.component.css',\r\n})\r\nexport class AppLayoutComponent {\r\n  menu: MenuItem[] = [\r\n    { icon: 'home', label: 'Home', route: '/dashboard' },\r\n    { icon: 'tasks', label: 'Tasks', route: '/tasks' },\r\n    { icon: 'reports', label: 'Reports', route: '/calendar' },\r\n    { icon: 'settings', label: 'Settings', route: '/settings' },\r\n  ];\r\n}\r\n",
+            "styleUrl": "./app-layout.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"grid grid-cols-[auto_1fr] h-screen\">\r\n  <!-- Sidebar -->\r\n  <aside class=\"bg-white dark:bg-gray-900 dark:border-gray-700 w-64\">\r\n    <app-side-bar [menuItems]=\"menu\"></app-side-bar>\r\n  </aside>\r\n\r\n  <!-- Contenido -->\r\n  <main class=\"dark:bg-gray-800 overflow-auto\">\r\n    <router-outlet></router-outlet>\r\n  </main>\r\n</div>\r\n"
+        },
+        {
+            "name": "AuthContainerComponent",
+            "id": "component-AuthContainerComponent-8e55a1c052ab99c48302e914be4e4e251015880c83192872b9336fc7a7c4a6c0e562280c7004eb99238395a11237b5e0cb3a4473edab06a1cd8ba1fe6dad984c",
+            "file": "src/app/core/auth/auth-container/auth-container.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-auth-container",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./auth-container.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-auth-container',\r\n  imports: [],\r\n  templateUrl: './auth-container.component.html',\r\n  styleUrl: './auth-container.component.css'\r\n})\r\nexport class AuthContainerComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./auth-container.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>auth-container works!</p>\r\n"
+        },
+        {
+            "name": "AuthLayoutComponent",
+            "id": "component-AuthLayoutComponent-f9e60dc573f39d7e51b964b2eea2f2a696c5da5935549c5a03690ec08c5f120ebea7f8e20dec7f8400bf808184915d21b37455761b31b9e3574e19723ba048bf",
+            "file": "src/app/layouts/auth-layout/auth-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-auth-layout",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./auth-layout.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-auth-layout',\r\n  imports: [],\r\n  templateUrl: './auth-layout.component.html',\r\n  styleUrl: './auth-layout.component.css'\r\n})\r\nexport class AuthLayoutComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./auth-layout.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>auth-layout works!</p>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -222,6 +520,44 @@
             }
         },
         {
+            "name": "DashboardPageComponent",
+            "id": "component-DashboardPageComponent-e14454d1d30c2c3ddfd392038bba1032f8a51ace383d3caa3ead6557cfe14ed6abbf47129c1f7ed127d9dbe2c36b5a200af22ef2bd099cc07805f40b9c781b2d",
+            "file": "src/app/features/dashboard/pages/dashboard-page/dashboard-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dashboard-page",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./dashboard-page.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-dashboard-page',\r\n  imports: [],\r\n  templateUrl: './dashboard-page.component.html',\r\n  styleUrl: './dashboard-page.component.css',\r\n})\r\nexport class DashboardPageComponent {}\r\n",
+            "styleUrl": "./dashboard-page.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<h1>Dashboard</h1>\r\n"
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-3913d92cff2a6acb06a1a939b7f32f83d2ef180c0bb6c2596280bad804af3b2b4e4edecb99dd915fff09fc3a98ed6bf5b868309fe8cd97dd17ab827ba11aa420",
             "file": "src/stories/header.component.ts",
@@ -306,6 +642,231 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "ItemTaskCardComponent",
+            "id": "component-ItemTaskCardComponent-a04bd6166a0c6b3cb835cd84530c413122e8d594a226846426ea8ddf3114b8a39e6dd26e8ed7719408b6534f4b9396d1607c977d60fea13c9da7f536b8d1c5ee",
+            "file": "src/app/features/tasks/components/item-task-card/item-task-card.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-item-task-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./item-task-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "input<string>('Task Name')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "seconds",
+                    "defaultValue": "signal(0)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "startTimer",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "TimerComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TagComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';\r\nimport { TimerComponent } from '../../../../shared/components/timer/timer.component';\r\nimport { interval } from 'rxjs';\r\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\r\nimport { TagComponent } from '../../../../shared/components/tag/tag.component';\r\n\r\n@Component({\r\n  selector: 'app-item-task-card',\r\n  imports: [TimerComponent, TagComponent],\r\n  templateUrl: './item-task-card.component.html',\r\n  styleUrl: './item-task-card.component.css',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class ItemTaskCardComponent {\r\n  label = input<string>('Task Name');\r\n  seconds = signal(0);\r\n\r\n  constructor() {\r\n    this.startTimer();\r\n  }\r\n\r\n  startTimer() {\r\n    interval(100)\r\n      .pipe(takeUntilDestroyed())\r\n      .subscribe(() => {\r\n        this.seconds.update((s) => s + 1);\r\n      });\r\n  }\r\n}\r\n",
+            "styleUrl": "./item-task-card.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "extends": [],
+            "templateData": "<div class=\"bg-natural-50 rounded-md shadow px-3 py-2 flex flex-col\">\r\n  <div class=\"text-end\">\r\n    <app-tag label=\"rapido\" color=\"red\"></app-tag>\r\n  </div>\r\n  <h3 class=\"\">{{ label() }}</h3>\r\n  <div class=\"flex justify-between mt-3\">\r\n    <app-timer [seconds]=\"seconds()\"></app-timer>\r\n    <button>play</button>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "MenuItemComponent",
+            "id": "component-MenuItemComponent-8e4641bbcedc4357aff54efb20c122e614604c5277d361dd932d574b39b6ba4b59f5156b06ff292f4aac111e8faff777fb3c5d8cff2446a56628feb8ccaf02c9",
+            "file": "src/app/shared/components/menu-item/menu-item.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-menu-item",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./menu-item.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "required": true
+                },
+                {
+                    "name": "isActive",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": false
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "required": true
+                },
+                {
+                    "name": "route",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "required": true
+                },
+                {
+                    "name": "isActive",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": false
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "required": true
+                },
+                {
+                    "name": "route",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "RouterModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-menu-item',\r\n  imports: [RouterModule],\r\n  templateUrl: './menu-item.component.html',\r\n  styleUrl: './menu-item.component.css',\r\n})\r\nexport class MenuItemComponent {\r\n  icon = input.required<string>();\r\n  label = input.required<string>();\r\n  route = input.required<string>();\r\n  isActive = input<boolean>(false);\r\n}\r\n",
+            "styleUrl": "./menu-item.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<a\r\n  [routerLink]=\"route()\"\r\n  routerLinkActive=\"bg-slate-100\"\r\n  class=\"flex gap-x-3 hover:bg-slate-100 rounded-md py-2 px-3 hover:cursor-pointer\"\r\n>\r\n  <img [src]=\"'assets/icons/' + icon() + '.svg'\" [alt]=\"'icon ' + icon()\" />\r\n  <span class=\"text-sm\"> {{ label() }} </span>\r\n</a>\r\n"
         },
         {
             "name": "MyButtonComponent",
@@ -502,6 +1063,290 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "SideBarComponent",
+            "id": "component-SideBarComponent-d5ef919836f71d0d2d17fe9dcaeffd55b70933adadfa1d4bc98a73692359d695b556f54162059a52a447af3f252689f6184d9632eaeda248a2409f2a7756e5dd",
+            "file": "src/app/shared/components/side-bar/side-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-side-bar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./side-bar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "menuItems",
+                    "defaultValue": "input.required<MenuItem[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MenuItemComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, input } from '@angular/core';\r\nimport { MenuItemComponent } from '../menu-item/menu-item.component';\r\nimport { MenuItem } from '../../../features/dashboard/models/menu-item';\r\n\r\n@Component({\r\n  selector: 'app-side-bar',\r\n  imports: [CommonModule, MenuItemComponent],\r\n  templateUrl: './side-bar.component.html',\r\n  styleUrl: './side-bar.component.css',\r\n})\r\nexport class SideBarComponent {\r\n  menuItems = input.required<MenuItem[]>();\r\n}\r\n",
+            "styleUrl": "./side-bar.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"p-4 dark:bg-slate-800 bg-white h-full flex flex-col gap-y-6\">\r\n  <div class=\"flex flex-col\">\r\n    <h1 class=\"text-lg font-medium\">Task Tracker</h1>\r\n    <span class=\"text-slate-400\">v1.0</span>\r\n  </div>\r\n  <div class=\"flex flex-col gap-y-1\">\r\n    @for (item of menuItems(); track item) {\r\n      <app-menu-item [icon]=\"item.icon\" [label]=\"item.label\" [route]=\"item.route\"> </app-menu-item>\r\n    }\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "TagComponent",
+            "id": "component-TagComponent-fb32c64a6a07a41f9f19cfba072b91859102cc305f0d961d39b1419243095b8020f18204a78117b9f00c0adba7502b09301194cea96107b90cc874d54d83403a",
+            "file": "src/app/shared/components/tag/tag.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tag",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./tag.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "required": true
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "color",
+                    "defaultValue": "input.required<'green' | 'blue' | 'red' | 'yellow' | 'gray'>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "colors",
+                    "defaultValue": "TAG_COLOR_CLASSES",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "required": true
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, input } from '@angular/core';\r\nimport { TAG_COLOR_CLASSES } from '../../assets/tag-colors';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'app-tag',\r\n  imports: [CommonModule],\r\n  templateUrl: './tag.component.html',\r\n  styleUrl: './tag.component.css',\r\n  host: {\r\n    class: 'inline-block',\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class TagComponent {\r\n  colors = TAG_COLOR_CLASSES;\r\n  color = input.required<'green' | 'blue' | 'red' | 'yellow' | 'gray'>();\r\n  label = input.required<string>();\r\n}\r\n",
+            "styleUrl": "./tag.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"rounded-md px-2 py-1 flex items-center\" [ngClass]=\"colors[color()]\">\r\n  <span class=\"text-xs leading-none\">{{ label() }}</span>\r\n</div>\r\n"
+        },
+        {
+            "name": "TasksPageComponent",
+            "id": "component-TasksPageComponent-c59d61cd55cc55a1c4eff9858fb3a03551248cd8255a9734f7a2ed104421aae5c58c19c0aeb6b5fc2ab36a320619a02987e3f7337910feb5b0e4d9855f56da55",
+            "file": "src/app/features/tasks/pages/tasks-page/tasks-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tasks-page",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./tasks-page.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "ItemTaskCardComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { ItemTaskCardComponent } from '../../components/item-task-card/item-task-card.component';\r\n\r\n@Component({\r\n  selector: 'app-tasks-page',\r\n  imports: [ItemTaskCardComponent],\r\n  templateUrl: './tasks-page.component.html',\r\n  styleUrl: './tasks-page.component.css',\r\n})\r\nexport class TasksPageComponent {}\r\n",
+            "styleUrl": "./tasks-page.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"p-5\">\r\n  <h1 class=\"text-4xl\">Tasks</h1>\r\n  <h2 class=\"text-slate-500 text-lg\">Track your daily tasks and time allocation</h2>\r\n\r\n  <div class=\"flex flex-col gap-y-2 w-1/3\">\r\n    <div class=\"bg-natural-50 rounded-md shadow px-3 py-2\">Esta es una tarea</div>\r\n    <div class=\"bg-natural-50 rounded-md shadow px-3 py-2\">Esta es una tarea</div>\r\n    <div class=\"bg-natural-50 rounded-md shadow px-3 py-2\">Esta es una tarea</div>\r\n    <app-item-task-card></app-item-task-card>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "TimerComponent",
+            "id": "component-TimerComponent-37dbf5de22e76df40767c1414e7b9f87dd3a1d58b1f52b64cc5f2df55c714bd15aed9e61d5d544580e1dfc9762f873b065991bc343ba54f9d8f8fd091dc83fb7",
+            "file": "src/app/shared/components/timer/timer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-timer",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./timer.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "seconds",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "minutes",
+                    "defaultValue": "computed(() => Math.floor(this.seconds() / 60))",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "seconds",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "required": false
+                },
+                {
+                    "name": "secondsToShow",
+                    "defaultValue": "computed(() => this.seconds() % 60)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "DecimalPipe",
+                    "type": "pipe"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { DecimalPipe } from '@angular/common';\r\nimport { Component, computed, input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-timer',\r\n  imports: [DecimalPipe],\r\n  templateUrl: './timer.component.html',\r\n  styleUrl: './timer.component.css',\r\n})\r\nexport class TimerComponent {\r\n  seconds = input<number>(0);\r\n\r\n  minutes = computed(() => Math.floor(this.seconds() / 60));\r\n  secondsToShow = computed(() => this.seconds() % 60);\r\n}\r\n",
+            "styleUrl": "./timer.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<span> {{ minutes() | number: '2.0-0' }}:{{ secondsToShow() | number: '2.0-0' }} </span>\r\n"
         }
     ],
     "modules": [],
@@ -516,6 +1361,16 @@
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
                 "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]\r\n}"
+            },
+            {
+                "name": "TAG_COLOR_CLASSES",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/assets/tag-colors.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  green: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',\r\n  red: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',\r\n  blue: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',\r\n  yellow: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',\r\n  gray: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200',\r\n}"
             }
         ],
         "functions": [],
@@ -533,6 +1388,18 @@
                     "type": "ApplicationConfig",
                     "defaultValue": "{\r\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]\r\n}"
                 }
+            ],
+            "src/app/shared/assets/tag-colors.ts": [
+                {
+                    "name": "TAG_COLOR_CLASSES",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/assets/tag-colors.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  green: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',\r\n  red: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',\r\n  blue: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',\r\n  yellow: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',\r\n  gray: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200',\r\n}"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -541,7 +1408,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 11,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -550,7 +1417,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -564,12 +1431,130 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/core/auth/auth-container/auth-container.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AuthContainerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/services/theme.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ThemeService",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/models/menu-item.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MenuItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/pages/dashboard-page/dashboard-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DashboardPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/tasks/components/item-task-card/item-task-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ItemTaskCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/tasks/pages/tasks-page/tasks-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TasksPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layouts/app-layout/app-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layouts/auth-layout/auth-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AuthLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/assets/tag-colors.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TAG_COLOR_CLASSES",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/components/menu-item/menu-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MenuItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/shared/components/my-button/my-button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "MyButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/components/side-bar/side-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SideBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/components/tag/tag.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TagComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/components/timer/timer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TimerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
