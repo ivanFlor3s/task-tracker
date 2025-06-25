@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
 import { TimerComponent } from '../../../../shared/components/timer/timer.component';
 import { interval } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TagComponent } from '../../../../shared/components/tag/tag.component';
 
 @Component({
   selector: 'app-item-task-card',
-  imports: [TimerComponent],
+  imports: [TimerComponent, TagComponent],
   templateUrl: './item-task-card.component.html',
   styleUrl: './item-task-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
