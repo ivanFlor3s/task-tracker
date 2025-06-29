@@ -1,0 +1,8 @@
+D:\workspace\task-tracker\backend\TaskTracker\obj\Debug\net8.0\TaskTracker.Api.csproj.AssemblyReference.cache
+D:\workspace\task-tracker\backend\TaskTracker\obj\Debug\net8.0\TaskTracker.Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\task-tracker\backend\TaskTracker\obj\Debug\net8.0\TaskTracker.Api.AssemblyInfoInputs.cache
+D:\workspace\task-tracker\backend\TaskTracker\obj\Debug\net8.0\TaskTracker.Api.AssemblyInfo.cs
+D:\workspace\task-tracker\backend\TaskTracker\obj\Debug\net8.0\TaskTracker.Api.csproj.CoreCompileInputs.cache
+D:\workspace\task-tracker\backend\TaskTracker\obj\Debug\net8.0\TaskTracker.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\workspace\task-tracker\backend\TaskTracker\obj\Debug\net8.0\TaskTracker.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\workspace\task-tracker\backend\TaskTracker\obj\Debug\net8.0\TaskTracker.Api.sourcelink.json
