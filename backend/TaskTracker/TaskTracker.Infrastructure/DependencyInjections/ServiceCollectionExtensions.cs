@@ -12,7 +12,7 @@ public static class ServiceCollectionExtensions
   {
     // Agregar EF Core con PostgreSQL
     services.AddDbContext<AppDbContext>(options =>
-      options.UseNpgsql("Host=db;Database=tasktracker_db;Username=tasktracker;Password=todo789"));
+      options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
 
     // Agregar los repositorios
