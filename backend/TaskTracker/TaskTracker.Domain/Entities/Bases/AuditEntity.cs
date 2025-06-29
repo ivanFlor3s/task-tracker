@@ -1,4 +1,4 @@
-namespace TaskTracker.Core.Entities;
+namespace TaskTracker.Core.Entities.Bases;
 
 public class AuditEntity
 {

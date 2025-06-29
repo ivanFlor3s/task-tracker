@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TaskTracker.Core.Entities;
+using TaskTracker.Core.Entities.Bases;
 
 namespace TaskTracker.Infrastructure;
 
@@ -20,5 +21,42 @@ public class AppDbContext : DbContext
   }
 
 
+  public override int SaveChanges()
+  {
+    ApplyAuditing();
+    return base.SaveChanges();
+  }
+
+  public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+  {
+    ApplyAuditing();
+    return await base.SaveChangesAsync(cancellationToken);
+  }
+
+  private void ApplyAuditing()
+  {
+    var entries = ChangeTracker.Entries()
+      .Where(e => e is { Entity: AuditEntity, State: EntityState.Added or EntityState.Modified or EntityState.Deleted });
+
+    foreach (var entry in entries)
+    {
+      var entity = (AuditEntity)entry.Entity;
+
+      if (entry.State == EntityState.Added)
+      {
+        entity.CreatedAt = DateTime.UtcNow;
+      }
+      else if (entry.State == EntityState.Modified)
+      {
+        entity.UpdatedAt = DateTime.UtcNow;
+      }
+      else if (entry.State == EntityState.Deleted)
+      {
+        entity.IsDeleted = true;
+        entity.DeletedAt = DateTime.UtcNow;
+        entry.State = EntityState.Modified; // Change state to Modified to avoid actual deletion
+      }
+    }
+  }
 
 }

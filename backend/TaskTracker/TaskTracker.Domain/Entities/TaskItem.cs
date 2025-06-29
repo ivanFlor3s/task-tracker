@@ -1,5 +1,6 @@
 
 using System.ComponentModel.DataAnnotations;
+using TaskTracker.Core.Entities.Bases;
 
 namespace TaskTracker.Core.Entities;
 
