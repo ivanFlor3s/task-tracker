@@ -1,6 +1,0 @@
-@TaskTracker.Presentation_HostAddress = http://localhost:5056
-
-GET {{TaskTracker.Presentation_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

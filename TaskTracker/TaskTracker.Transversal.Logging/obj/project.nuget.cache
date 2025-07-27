@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "PKFofH9KeOI=",
+  "success": true,
+  "projectFilePath": "D:\\workspace\\task-tracker\\TaskTracker\\TaskTracker.Transversal.Logging\\TaskTracker.Transversal.Logging.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ivan\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.303\\microsoft.net.sdk.compilers.toolset.9.0.303.nupkg.sha512"
+  ],
+  "logs": []
+}

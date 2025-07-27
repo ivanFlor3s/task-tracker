@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7"/>
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TaskTracker.Application.Dto\TaskTracker.Application.Dto.csproj" />
+      <ProjectReference Include="..\TaskTracker.Application.Interface\TaskTracker.Application.Interface.csproj" />
+      <ProjectReference Include="..\TaskTracker.Application.Main\TaskTracker.Application.Main.csproj" />
+      <ProjectReference Include="..\TaskTracker.Domain.Core\TaskTracker.Domain.Core.csproj" />
+      <ProjectReference Include="..\TaskTracker.Infraestructure.Repository\TaskTracker.Infraestructure.Repository.csproj" />
+      <ProjectReference Include="..\TaskTracker.Transversal.Common\TaskTracker.Transversal.Common.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\bin\Debug\net9.0\TaskTracker.Domain.Entity.deps.json
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\bin\Debug\net9.0\TaskTracker.Domain.Entity.dll
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\bin\Debug\net9.0\TaskTracker.Domain.Entity.pdb
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\obj\Debug\net9.0\TaskTracker.Domain.Entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\obj\Debug\net9.0\TaskTracker.Domain.Entity.AssemblyInfoInputs.cache
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\obj\Debug\net9.0\TaskTracker.Domain.Entity.AssemblyInfo.cs
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\obj\Debug\net9.0\TaskTracker.Domain.Entity.csproj.CoreCompileInputs.cache
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\obj\Debug\net9.0\TaskTracker.Domain.Entity.dll
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\obj\Debug\net9.0\refint\TaskTracker.Domain.Entity.dll
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\obj\Debug\net9.0\TaskTracker.Domain.Entity.pdb
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Domain.Entity\obj\Debug\net9.0\ref\TaskTracker.Domain.Entity.dll

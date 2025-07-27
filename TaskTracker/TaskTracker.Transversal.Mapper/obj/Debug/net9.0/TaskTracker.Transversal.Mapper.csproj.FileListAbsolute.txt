@@ -1,0 +1,17 @@
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\bin\Debug\net9.0\TaskTracker.Transversal.Mapper.deps.json
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\bin\Debug\net9.0\TaskTracker.Transversal.Mapper.dll
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\bin\Debug\net9.0\TaskTracker.Transversal.Mapper.pdb
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\bin\Debug\net9.0\TaskTracker.Application.Dto.dll
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\bin\Debug\net9.0\TaskTracker.Domain.Entity.dll
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\bin\Debug\net9.0\TaskTracker.Application.Dto.pdb
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\bin\Debug\net9.0\TaskTracker.Domain.Entity.pdb
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\TaskTracker.Transversal.Mapper.csproj.AssemblyReference.cache
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\TaskTracker.Transversal.Mapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\TaskTracker.Transversal.Mapper.AssemblyInfoInputs.cache
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\TaskTracker.Transversal.Mapper.AssemblyInfo.cs
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\TaskTracker.Transversal.Mapper.csproj.CoreCompileInputs.cache
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\TaskTrac.4C7FC4A4.Up2Date
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\TaskTracker.Transversal.Mapper.dll
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\refint\TaskTracker.Transversal.Mapper.dll
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\TaskTracker.Transversal.Mapper.pdb
+D:\workspace\task-tracker\TaskTracker\TaskTracker.Transversal.Mapper\obj\Debug\net9.0\ref\TaskTracker.Transversal.Mapper.dll
