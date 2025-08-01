@@ -1,0 +1,76 @@
+# Build results
+bin/
+obj/
+out/
+
+# Rider project files
+.idea/
+*.sln.iml
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# dotCover
+*.dotCover
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Visual Studio Code (if you happen to open it there)
+.vscode/
+
+# dotenv
+*.env
+
+# Resharper
+_ReSharper*/
+*.ReSharper
+*.DotSettings.user
+
+# JetBrains Rider caches
+.idea/
+.idea/.idea.*
+.idea/.idea_modules/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/shelf/
+
+# Local test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.testsettings
+*.vsmdi
+
+# Azure build artifacts
+*.azurePubxml
+*.pubxml
+*.publishproj
+*.Publish.xml
+
+# EF Core migrations snapshots (optional)
+Migrations/*Snapshot.cs
+
+# Local secrets (if using Secret Manager)
+secrets.json
